@@ -4,6 +4,7 @@ import XMonad.Config.Gnome
 import XMonad.Config.Desktop
 import XMonad.Layout.BoringWindows
 import XMonad.Layout.LayoutModifier
+import XMonad.Layout.ThreeColumns
 import Data.Monoid
 import Control.Monad
 import System.Exit
@@ -12,9 +13,9 @@ import qualified XMonad.StackSet as W
 import XMonad.Layout.BoringWindows as BW
 import Data.List
 
-myModMask       = mod3Mask
+myModMask       = mod4Mask
  
-myLayout        = boringAuto . minimize $ (Tall 1 (3/100) (1/2)) ||| Full
+myLayout        = boringAuto . minimize $ (ThreeColMid 1 (3/100) (1/2) ||| Tall 1 (3/100) (1/2)) ||| Full
 
 myKeys conf@(XConfig {XMonad.modMask = modm}) =
   [
